@@ -1,0 +1,16 @@
+{
+  "compatibility_date": "2025-04-01",
+  "main": "src/index.ts",
+  "name": "my-memory-worker",
+  "upload_source_maps": true,
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "t-memory",
+      "database_id": "5b6bb105-fe19-492f-84a9-65d81bce2c78"
+    }
+  ]
+}
