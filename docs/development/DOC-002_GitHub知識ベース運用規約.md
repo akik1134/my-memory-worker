@@ -224,3 +224,48 @@ AIが参照できる
 情報を保存することではなく、
 
 未来の開発を再開できる知識基盤を作ることである。
+
+
+---
+
+# フォルダ名の注意
+
+D1OSでは似た名前のフォルダを役割で区別する。
+
+## migration
+
+用途：
+
+D1OS開発状態の引き継ぎ情報保存。
+
+保存内容：
+
+- Runtime Export
+- Thread Migration
+- Resume情報
+
+
+## migrations
+
+用途：
+
+Cloudflare D1 Databaseの変更履歴保存。
+
+保存内容：
+
+- SQL Migration File
+- Database Schema変更履歴
+
+
+注意：
+
+- 役割が異なるフォルダは、名前だけで意味が分かるようにする。
+- 似た語を使う場合は、用途を明示する。
+- 例：
+  - migration: 開発状態の引き継ぎ情報
+  - migrations: D1 Database の変更履歴
+
+このルールにより、同じように見えるフォルダでも用途を混同せずに管理できる。
+
+migration と migrations は別用途であり、
+混同しない。

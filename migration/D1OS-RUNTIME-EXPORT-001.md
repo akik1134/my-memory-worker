@@ -507,3 +507,20 @@ Unknownとして扱う。
 ## Status
 
 READY
+
+
+## 6. Migration Export 関連ドキュメント更新
+
+目的：
+次スレッドへ D1OS の開発状態を安全に移行するため、
+Runtime Export 関連資料と Knowledge Base 入口情報を保存する。
+
+更新内容：
+
+- README.md を更新
+- docs/development/README.md を追加
+- migration/README.md を追加
+
+状態：
+
+- GitHub へ同期予定
