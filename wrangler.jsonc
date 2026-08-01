@@ -1,16 +1,16 @@
 {
   "compatibility_date": "2025-04-01",
-  "main": "src/index.ts",
+  "main": "worker.js",
   "name": "my-memory-worker",
   "upload_source_maps": true,
   "observability": {
     "enabled": true
   },
   "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "t-memory",
-      "database_id": "5b6bb105-fe19-492f-84a9-65d81bce2c78"
-    }
-  ]
+  {
+    "binding": "DB",
+    "database_name": "sil-sub-brain-db",
+    "database_id": "5a83c1d7-fb7c-4173-8590-9808d0dab876"
+  }
+]
 }
