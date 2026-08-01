@@ -72,9 +72,23 @@ D1OS では、以下の流れを基本とします。
 ## ドキュメント
 
 - [docs/development/](docs/development/) : 開発知識・運用規約
+- [docs/development/README.md](docs/development/README.md) : Knowledge Base 文書の目次
 - [docs/development/DOC-001_X11開発環境構築ガイド.md](docs/development/DOC-001_X11開発環境構築ガイド.md) : X11 開発環境構築手順
 - [docs/development/DOC-002_GitHub知識ベース運用規約.md](docs/development/DOC-002_GitHub知識ベース運用規約.md) : GitHub 知識ベース運用規約
+- [migration/](migration/) : Migration Export の保管場所
+- [migration/README.md](migration/README.md) : Migration Export の目次
+- [migration/D1OS-RUNTIME-EXPORT-001.md](migration/D1OS-RUNTIME-EXPORT-001.md) : Runtime Export の要点整理
 
 ## 目的
 
 このリポジトリは、単なるコード保存先ではなく、D1OS の開発知識と設計判断を未来へ引き継ぐための基盤です。
+
+## Knowledge Base 基盤
+
+現在の構成は、以下の3点で成立しています。
+
+- [docs/development/DOC-001_X11開発環境構築ガイド.md](docs/development/DOC-001_X11開発環境構築ガイド.md) : 開発環境の復元手順
+- [docs/development/DOC-002_GitHub知識ベース運用規約.md](docs/development/DOC-002_GitHub知識ベース運用規約.md) : 知識保存と運用ルール
+- [migration/D1OS-RUNTIME-EXPORT-001.md](migration/D1OS-RUNTIME-EXPORT-001.md) : 実行時状態と開発履歴のエクスポート
+
+この3点を組み合わせることで、PC変更・AI変更・開発再開時にも、必要な情報を再利用できる状態を作っています。
