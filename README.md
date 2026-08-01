@@ -1,68 +1,80 @@
-# OpenAPI Template
+# D1OS - my-memory-worker
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/chanfana-openapi-template)
+## 概要
 
-![OpenAPI Template Preview](https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/91076b39-1f5b-46f6-7f14-536a6f183000/public)
+D1OSは、AIと人間が長期的に共同開発を続けるための外部記憶・開発基盤プロジェクトです。
+このリポジトリでは、Cloudflare Workers と D1 Database を使った API サーバーを構成し、開発知識と復元手順を GitHub 上で管理できるようにしています。
 
-<!-- dash-content-start -->
+## 主要な特徴
 
-This is a Cloudflare Worker with OpenAPI 3.1 Auto Generation and Validation using [chanfana](https://github.com/cloudflare/chanfana) and [Hono](https://github.com/honojs/hono).
+- Cloudflare Workers ベースの API 実装
+- D1 Database との接続
+- Hono + Chanfana + Zod による型安全な API 開発
+- Vitest ベースのテスト構成
+- 開発手順・環境構築・知識管理の文書化
 
-This is an example project made to be used as a quick start into building OpenAPI compliant Workers that generates the
-`openapi.json` schema automatically from code and validates the incoming request to the defined parameters or request body.
+## 技術スタック
 
-This template includes various endpoints, a D1 database, and integration tests using [Vitest](https://vitest.dev/) as examples. In endpoints, you will find [chanfana D1 AutoEndpoints](https://chanfana.com/endpoints/auto/d1) and a [normal endpoint](https://chanfana.com/endpoints/defining-endpoints) to serve as examples for your projects.
+- Node.js
+- TypeScript
+- Hono
+- Chanfana
+- Cloudflare Workers
+- Cloudflare D1
+- Wrangler
+- Vitest
 
-Besides being able to see the OpenAPI schema (openapi.json) in the browser, you can also extract the schema locally no hassle by running this command `npm run schema`.
+## リポジトリ構成
 
-<!-- dash-content-end -->
+- [src/](src/) : アプリケーション本体の実装
+- [tests/](tests/) : 統合テストと設定
+- [migrations/](migrations/) : D1 マイグレーション SQL
+- [docs/](docs/) : 開発ガイドと運用規約
+- [worker.js](worker.js) : Worker エントリーポイント
+- [wrangler.jsonc](wrangler.jsonc) : Wrangler 設定
 
-> [!IMPORTANT]
-> When using C3 to create this project, select "no" when it asks if you want to deploy. You need to follow this project's [setup steps](https://github.com/cloudflare/templates/tree/main/openapi-template#setup-steps) before deploying.
+## クイックスタート
 
-## Getting Started
-
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/openapi-template
-```
-
-A live public deployment of this template is available at [https://openapi-template.templates.workers.dev](https://openapi-template.templates.workers.dev)
-
-## Setup Steps
-
-1. Install the project dependencies with a package manager of your choice:
-   ```bash
-   npm install
-   ```
-2. Create a [D1 database](https://developers.cloudflare.com/d1/get-started/) with the name "openapi-template-db":
-   ```bash
-   npx wrangler d1 create openapi-template-db
-   ```
-   ...and update the `database_id` field in `wrangler.json` with the new database ID.
-3. Run the following db migration to initialize the database (notice the `migrations` directory in this project):
-   ```bash
-   npx wrangler d1 migrations apply DB --remote
-   ```
-4. Deploy the project!
-   ```bash
-   npx wrangler deploy
-   ```
-
-## Testing
-
-This template includes integration tests using [Vitest](https://vitest.dev/). To run the tests locally:
+### 1. 依存関係のインストール
 
 ```bash
-npm run test
+npm install
 ```
 
-Test files are located in the `tests/` directory, with examples demonstrating how to test your endpoints and database interactions.
+### 2. ローカルDBの適用
 
-## Project structure
+```bash
+npx wrangler d1 migrations apply DB --local
+```
 
-1. Your main router is defined in `src/index.ts`.
-2. Each endpoint has its own file in `src/endpoints/`.
-3. Integration tests are located in the `tests/` directory.
-4. For more information read the [chanfana documentation](https://chanfana.com/), [Hono documentation](https://hono.dev/docs), and [Vitest documentation](https://vitest.dev/guide/).
+### 3. 開発サーバー起動
+
+```bash
+npx wrangler dev
+```
+
+### 4. テスト実行
+
+```bash
+npm test
+```
+
+## 開発ルール
+
+D1OS では、以下の流れを基本とします。
+
+1. 現在状態を確認する
+2. 小さく変更する
+3. 動作確認を行う
+4. GitHub に保存する
+5. 次の工程に進む
+
+## ドキュメント
+
+- [docs/development/](docs/development/) : 開発知識・運用規約
+- [docs/development/DOC-001_X11開発環境構築ガイド.md](docs/development/DOC-001_X11開発環境構築ガイド.md) : X11 開発環境構築手順
+- [docs/development/DOC-002_GitHub知識ベース運用規約.md](docs/development/DOC-002_GitHub知識ベース運用規約.md) : GitHub 知識ベース運用規約
+
+## 目的
+
+このリポジトリは、単なるコード保存先ではなく、D1OS の開発知識と設計判断を未来へ引き継ぐための基盤です。
