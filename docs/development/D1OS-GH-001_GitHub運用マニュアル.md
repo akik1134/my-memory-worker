@@ -209,3 +209,33 @@ git status
 ```text
 nothing to commit, working tree clean
 ```
+
+
+---
+
+# Git運用ルール（Version1）
+
+通常開発では以下の手順を標準とする。
+
+1. ファイルを編集
+2. 保存（Ctrl + S）
+3. git add
+4. git commit -m "内容"
+5. git push
+6. git status
+
+## Commitメッセージ
+
+AIは毎回Commitメッセージを提示する。
+
+## GitHubコメント
+
+通常運用では使用しない。
+
+GitHubコメントは以下の場合のみ利用する。
+
+・Release作成
+
+・Issue作成
+
+・Pull Request作成

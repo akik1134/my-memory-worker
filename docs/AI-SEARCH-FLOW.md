@@ -2,98 +2,89 @@
 
 Version: 1.0
 
-目的：
+---
+
+## 目的
 
 AIがD1OS Knowledge Baseから必要な情報を取得するときの参照順序を固定する。
 
 ---
 
-# 基本検索フロー
+## 基本検索フロー
 
-## Step 1
+AIは、次の順番で情報を参照する。
 
-Runtime Export確認
+1. Runtime Export を確認する
+2. AI Reference を確認する
+3. AI Index を確認する
+4. Knowledge Map を確認する
+5. Tag で絞り込む
+6. 詳細資料を確認する
 
-場所：
+### Step 1: Runtime Export を確認する
 
-migration/
+場所:
 
-確認内容：
+- [migration/D1OS-RUNTIME-EXPORT-001.md](../migration/D1OS-RUNTIME-EXPORT-001.md)
+
+確認内容:
 
 - 現在位置
 - Version
 - Next Action
 - Open Issues
 
-目的：
+目的:
 
 現在の開発状態を理解する。
 
----
+### Step 2: AI Reference を確認する
 
-## Step 2
+場所:
 
-AI-REFERENCE確認
+- [docs/AI-REFERENCE.md](AI-REFERENCE.md)
 
-場所：
-
-docs/AI-REFERENCE.md
-
-確認内容：
+確認内容:
 
 - 重要資料
 - 基本ルール
 - 参照先
 
----
+### Step 3: AI Index を確認する
 
-## Step 3
+場所:
 
-AI-INDEX確認
+- [docs/AI-INDEX.md](AI-INDEX.md)
 
-場所：
+確認内容:
 
-docs/AI-INDEX.md
+- 資料一覧
+- 主要な参照先
 
-確認内容：
+### Step 4: Knowledge Map を確認する
 
-資料一覧。
+場所:
 
----
+- [docs/KNOWLEDGE-MAP.md](KNOWLEDGE-MAP.md)
 
-## Step 4
+確認内容:
 
-Knowledge Map確認
+- 目的別の資料場所
 
-場所：
+### Step 5: Tag で絞り込む
 
-docs/KNOWLEDGE-MAP.md
+場所:
 
-確認内容：
+- [docs/development/AI-TAGS.md](development/AI-TAGS.md)
 
-目的別の資料場所。
+確認内容:
 
----
+- 関連タグ
+- 該当文書
 
-## Step 5
+### Step 6: 詳細資料を確認する
 
-Tag検索
-
-場所：
-
-docs/development/AI-TAGS.md
-
-確認内容：
-
-関連タグ。
-
----
-
-## Step 6
-
-詳細資料確認
-
-対象：
+対象:
 
 - DOC
 - Architecture
@@ -102,34 +93,37 @@ docs/development/AI-TAGS.md
 
 ---
 
-# 禁止事項
+## 禁止事項
 
-AIは、
+AIは、次を行わない。
 
 - 不明な情報を推測しない
 - 最新状態を確認せず変更しない
 - 過去設計を勝手に変更しない
+- 参照順序を飛ばして直接結論を出さない
+
+## 検索手順の標準ルール
+
+- まず Runtime Export で現在状態を把握する
+- 次に AI Reference と AI Index で入口を確認する
+- その後、必要な文書だけをタグや目的別に選択する
+- 情報が不足している場合のみ、追加確認を行う
+- 追加確認が必要な場合は、ユーザーへ最小限の質問を行う
 
 ---
 
-# 開発再開条件
+## 開発再開条件
 
-以下を確認後、作業開始。
+作業開始前に、次を確認する。
 
-□ Current State確認
-
-□ Decision確認
-
-□ Next Action確認
-
-□ 必要資料確認
+- Current State を確認した
+- Decision を確認した
+- Next Action を確認した
+- 必要資料を確認した
 
 ---
 
-# Version管理
+## Version管理
 
-Version:
-
-1.0
-
-変更時は差分更新する。
+- Version: 1.0
+- 変更時は差分更新する
