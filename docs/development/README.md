@@ -6,6 +6,10 @@
 
 - [DOC-001_X11開発環境構築ガイド.md](DOC-001_X11開発環境構築ガイド.md)
 - [DOC-002_GitHub知識ベース運用規約.md](DOC-002_GitHub知識ベース運用規約.md)
+- [D1OS-GH-001_GitHub運用マニュアル.md](D1OS-GH-001_GitHub運用マニュアル.md)
+- [D1OS-GH-002_KnowledgeBase登録ルール.md](D1OS-GH-002_KnowledgeBase登録ルール.md)
+- [AI-TAGS.md](AI-TAGS.md)
+- [D1OS-GH-003_GitHubシステム運用ルール.md](D1OS-GH-003_GitHubシステム運用ルール.md)
 
 ## 運用方針
 
