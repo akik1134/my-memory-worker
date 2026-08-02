@@ -213,29 +213,47 @@ nothing to commit, working tree clean
 
 ---
 
-# Git運用ルール（Version1）
+## 12. Git運用ルール（Version 1）
 
-通常開発では以下の手順を標準とする。
+通常開発では、次の手順を標準とする。
 
-1. ファイルを編集
-2. 保存（Ctrl + S）
-3. git add
-4. git commit -m "内容"
-5. git push
-6. git status
+1. ファイルを編集する
+2. 保存する
+3. git status で変更内容を確認する
+4. git add で変更を反映する
+5. git commit -m "内容" で保存内容を記録する
+6. git push で GitHub へ送信する
+7. git status で完了状態を確認する
 
-## Commitメッセージ
+### 12.1 Commitメッセージ
 
-AIは毎回Commitメッセージを提示する。
+AIは毎回、内容が分かるコミットメッセージを提示する。
 
-## GitHubコメント
+例：
 
-通常運用では使用しない。
+```bash
+git commit -m "docs: GitHub運用マニュアルを更新"
+```
 
-GitHubコメントは以下の場合のみ利用する。
+### 12.2 ブランチ運用
 
-・Release作成
+- 1作業につき1ブランチを基本とする
+- ブランチ名は内容が分かるようにする
+- 作業完了後は不要なブランチを整理する
 
-・Issue作成
+### 12.3 GitHubコメント
 
-・Pull Request作成
+通常運用では、GitHubコメントは使用しない。
+
+GitHubコメントは、次の場合のみ利用する。
+
+- Release作成時
+- Issue作成時
+- Pull Request作成時
+
+### 12.4 追加ルール
+
+- 変更後は必ず git status を確認する
+- 保存漏れがないようにする
+- 1サイクルで編集・保存・Git保存まで完結させる
+- 作業途中で終了しない
