@@ -12,6 +12,7 @@ export const task = z.object({
 export const TaskModel = {
   tableName: "tasks",
   primaryKeys: ["id"],
+  schema: task,
   serializer: (obj: Record<string, string | number | boolean>) => {
     return {
       ...obj,
@@ -20,3 +21,8 @@ export const TaskModel = {
   },
   serializerObject: task,
 };
+
+export default TaskModel;
+
+
+

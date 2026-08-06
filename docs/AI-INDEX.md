@@ -53,3 +53,17 @@ Migration Exportから参照されることを前提とする。
 3. 必要な文書のみを読む
 4. Runtime Exportを確認する
 5. 開発を開始する
+
+
+## Development Protocol
+
+* Development Environment Protocol:
+  [docs/development/D1OS-DEV-001_初心者前提開発環境プロトコル.md](development/D1OS-DEV-001_初心者前提開発環境プロトコル.md)
+
+役割：
+
+* AI作業指示プロトコル
+* 初心者前提の開発環境ルール
+* Terminal / PowerShell操作ルール
+* 作業状態保持ルール
+* Verification作業手順
